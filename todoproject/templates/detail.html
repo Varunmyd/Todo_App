@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+<!--<!DOCTYPE html>-->
+
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--{% for i in task %}-->
+<!--{{i.name}}-->
+<!--{{i.priority}}-->
+<!--{% endfor %}-->
+<!--</body>-->
+<!--</html>-->
+
+{% block content %}
+<div class="col-md-6">
+    <h4>Task to be Completed</h4>
+
+    <div class="card shadow">
+        <div class="card-body">
+            <h5 class="card-title">{{task.name}}</h5>
+            <p><b>{{task.priority}}</b></p>
+            <p><b>{{task.date}}</b></p>
+
+            <a class="btn btn-danger" href="{% url 'todoapp:delete' task.id %}">Done</a>
+            <a class="btn btn-success" href="{% url 'todoapp:cbvupdate' task.id %}">Update</a>
+
+
+        </div>
+
+    </div>
+    <br>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
